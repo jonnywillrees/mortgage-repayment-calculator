@@ -1,0 +1,62 @@
+/* ========================
+Kevin Powell basic reset
+======================== */
+
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force font styles to inherit for form elements such has input or button */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* dark mode user-agent-styles */
+html {
+    hanging-punctuation: first last;  /* browser support is low. https://developer.mozilla.org/en-US/docs/Web/CSS/hanging-punctuation */
+    /* color-scheme: dark light; */
+}
+
+/* min body height */
+body {
+    min-height: 100svh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* ========================
+Referenced from Kevin Powell
+video uploaded 05 Jan 2024
+https://www.youtube.com/watch?v=cCAtD_BAHNw
+======================== */
+
+/* Balance out long lines of heading text */
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance; /* https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap#balance */
+}
+
+p {
+    max-width: 75ch; /* standard length of readable line of text */
+    text-wrap: pretty; /* prevents any orphan words (single word on it's own line) */
+}
+
+/* Some scrolling stuff when clicking links */
+@media (prefers-reduced-motion: no-preference) {
+    :has(:target) {
+        scroll-behavior: smooth;
+        scroll-padding-top: 2rem;
+    }
+}
