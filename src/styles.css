@@ -4,5 +4,15 @@
 
 body {
     font-family: var(--ff-sans), Arial, Helvetica, sans-serif;
+    background-color: var(--clr-slate-100);
+    display: grid;
+    place-content: center;
+}
+
+.card {
+    max-width: 750px;
+    background-color: var(--clr-white);
+    padding: 2rem;
+    border-radius: 10px;
 }
 

@@ -1,47 +1,53 @@
-<main class="main">
-  <div class="content">
-    Mortgage Calculator
-    Clear All
+<div class="card">
+  <main class="card__content">
+    <div class="calculator">
+      <div class="calculator__header">
+        <h2>Mortgage Calculator</h2>
+        <button (click)="onClearCalculator($event)">Clear All</button>
+      </div>
+      <form class="calculator__form" (ngSubmit)="onSubmit($event)">
+        <label for="amount">Mortgage Amount</label>
+        <input type="number" name="amount" id="amount">
+
+        <label for="term">Mortgage Term</label>
+        <input type="number" name="term" id="term">
+
+        <label for="interestRate">Interest Rate</label>
+        <input type="number" name="interestRate" id="interestRate">
+
+        <span>Mortgage Type</span>
+        <input type="radio" name="type" id="repayment" value="repayment">
+        <label for="repayment">Repayment</label>
+        <input type="radio" name="type" id="interestOnly" value="interestOnly">
+        <label for="interestOnly">Interest Only</label>
+
+        <button type="submit">Calculate Repayments</button>
+      </form>
+    </div>
+    <div class="results">
+      @if (isResultCalculated) {
+        Your results
   
-    Mortgage Amount
+        Your results are shown below based on the information you provided. 
+        To adjust the results, edit the form and click “calculate repayments” again.
+      
+        Your monthly repayments
+      
+        Total you'll repay over the term
+      }
+      @else {
+        Results shown here
   
-    Mortgage Term
-  
-    Interest Rate
-  
-    Mortgage Type
-    Repayment
-    Interest Only
-  
-    Calculate Repayments
-  
-    <!-- Empty results start -->
-  
-    Results shown here
-  
-    Complete the form and click “calculate repayments” to see what 
-    your monthly repayments would be.
-  
-    <!-- Empty results end -->
-  
-    <!-- Completed results start -->
-  
-    Your results
-  
-    Your results are shown below based on the information you provided. 
-    To adjust the results, edit the form and click “calculate repayments” again.
-  
-    Your monthly repayments
-  
-    Total you'll repay over the term
-  
-    <!-- Completed results end -->
-    
+        Complete the form and click “calculate repayments” to see what 
+        your monthly repayments would be.
+      }
+    </div>
+
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
       Coded by <a href="#">Your Name Here</a>.
     </div>
-  </div>
-</main>
+  </main>
+</div>
 
 <router-outlet />
