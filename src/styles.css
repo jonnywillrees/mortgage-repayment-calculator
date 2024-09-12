@@ -1,3 +1,8 @@
 @import 'styles/reset.css';
 @import 'styles/root.css';
+@import 'styles/fonts.css';
+
+body {
+    font-family: var(--ff-sans), Arial, Helvetica, sans-serif;
+}
 

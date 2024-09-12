@@ -8,4 +8,6 @@
     --clr-slate-500: hsl(200, 26%, 54%);
     --clr-slate-700: hsl(200, 24%, 40%);
     --clr-slate-900: hsl(202, 55%, 16%);
+
+    --ff-sans: 'Plus Jakarta Sans';
 }
