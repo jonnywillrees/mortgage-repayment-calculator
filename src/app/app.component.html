@@ -5,9 +5,9 @@
         <h2>Mortgage Calculator</h2>
         <button (click)="onClearCalculator($event)">Clear All</button>
       </div>
-      <form class="calculator__form" (ngSubmit)="onSubmit($event)">
+      <form class="calculator__form" (submit)="onSubmit($event)">
         <label for="amount">Mortgage Amount</label>
-        <input type="number" name="amount" id="amount">
+        <app-input-currency inputId="amount" [formControl]="amount" />
 
         <label for="term">Mortgage Term</label>
         <input type="number" name="term" id="term">
