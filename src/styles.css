@@ -1,6 +1,8 @@
 @import 'styles/reset.css';
 @import 'styles/root.css';
 @import 'styles/fonts.css';
+@import 'styles/typography.css';
+@import 'styles/utils.css';
 
 body {
     font-family: var(--ff-sans), Arial, Helvetica, sans-serif;
@@ -10,9 +12,10 @@ body {
 }
 
 .card {
-    max-width: 750px;
+    max-width: 1008px;
     background-color: var(--clr-white);
     padding: 2rem;
     border-radius: 10px;
+    min-height: 606px;
 }
 

@@ -1,0 +1,29 @@
+.text-preset-1,
+.text-preset-2,
+.text-preset-3 {
+    line-height: 1.25;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+
+.text-preset-1 {
+    font-size: 3.5rem;
+}
+
+.text-preset-2 {
+    font-size: 1.5rem;
+}
+
+.text-preset-3 {
+    font-size: 1.125rem;
+}
+
+.text-preset-4 {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.text-preset-5 {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
