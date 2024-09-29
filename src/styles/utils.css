@@ -1,0 +1,21 @@
+.clr-primary {
+    color: var(--clr-primary);
+}
+.clr-accent {
+    color: var(--clr-accent);
+}
+.clr-slate-100 {
+    color: var(--clr-slate-100);
+}
+.clr-slate-300 {
+    color: var(--clr-slate-300);
+}
+.clr-slate-500 {
+    color: var(--clr-slate-500);
+}
+.clr-slate-700 {
+    color: var(--clr-slate-700);
+}
+.clr-slate-900 {
+    color: var(--clr-slate-900);
+}

@@ -3,6 +3,7 @@
 @import 'styles/fonts.css';
 @import 'styles/typography.css';
 @import 'styles/utils.css';
+@import 'styles/components/input.css';
 
 body {
     font-family: var(--ff-sans), Arial, Helvetica, sans-serif;
@@ -17,5 +18,13 @@ body {
     padding: 2rem;
     border-radius: 10px;
     min-height: 606px;
+}
+
+.reset-button {
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    text-underline-offset: 1.5px;
+    cursor: pointer;
 }
 

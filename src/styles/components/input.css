@@ -1,0 +1,37 @@
+.input-wrapper {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    border: 1px solid var(--clr-slate-500);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.input-wrapper:has(input:focus) {
+    border-color: var(--clr-slate-900);
+}
+
+.input-group-addon {
+    padding-inline: 1rem;
+    color: var(--clr-slate-700);
+    text-align: center;
+    background-color: var(--clr-slate-100);
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+input[type="text"],
+input[type="number"] {
+    min-height: 3rem;
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    display: table-cell;
+    padding: 6px 12px;
+    color: var(--clr-slate-900);
+    outline: none;
+    border: none;
+}
