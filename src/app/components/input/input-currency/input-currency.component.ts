@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
-import {  FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { OnChangeFn, OnTouchedFn } from '../../../models/control-value-accessor.model';
+import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { BaseControlValueAccessor } from '../../../config/base-control-value-accessor';
 import { formatCurrency } from '@angular/common';
 
 @Component({
@@ -8,7 +8,6 @@ import { formatCurrency } from '@angular/common';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './input-currency.component.html',
-  styleUrl: './input-currency.component.css',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -17,31 +16,17 @@ import { formatCurrency } from '@angular/common';
     }
   ]
 })
-export class InputCurrencyComponent {
+export class InputCurrencyComponent extends BaseControlValueAccessor<number | null> {
   @ViewChild('input') inputEl!: ElementRef<HTMLInputElement>;
   @Input() inputId = '';
+  @Input() prefix = '';
+  @Input() suffix = '';
 
-  onChange: OnChangeFn<number | null> = () => {};
-  onTouched: OnTouchedFn = () => {};
-  
-  inputValue: string | null = null;
-  isDisabled = false;
 
-  writeValue(value: number): void {
-    if (value === null || value === undefined) return;
-    this.inputValue = formatCurrency(value, 'en-GB', '', 'GBP', '0.0-2');
-  }
+  protected override writeValueToInput(value: number | null): void {
+      if (value === null || value === undefined) return;
 
-  registerOnChange(fn: OnChangeFn<number | null>): void {
-    this.onChange = fn;
-  }
-
-  registerOnTouched(fn: OnTouchedFn): void {
-    this.onTouched = fn;
-  }
-
-  setDisabledState?(isDisabled: boolean): void {
-    this.isDisabled = isDisabled;
+      this.inputValue = formatCurrency(value, 'en-GB', '', 'GBP', '0.0-2');
   }
 
   onInputChange(value: string): void {
@@ -50,18 +35,21 @@ export class InputCurrencyComponent {
       if (rawValue) {
         const formatted = formatCurrency(rawValue, 'en-GB', '', 'GBP', '0.0-2');
         this.inputEl.nativeElement.value = formatted;
-        this.onChange(rawValue);
+        this.notifyValueChanged(rawValue);
       } else {
         this.inputEl.nativeElement.value = '';
-        this.onChange(null);
+        this.notifyValueChanged(null);
       }
     } else {
-      this.onChange(null);
+      this.notifyValueChanged(null);
     }
   }
 
   onInputBlur(): void {
-    this.onTouched();
+    this.notifyTouched();
   }
-  
+
+  onClickAddon(): void {
+    this.inputEl.nativeElement.focus();
+  }
 }

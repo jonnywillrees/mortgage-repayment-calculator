@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputCurrencyComponent } from './input-currency.component';
+import { InputPercentageComponent } from './input-percentage.component';
 
-describe('InputCurrencyComponent', () => {
-  let component: InputCurrencyComponent;
-  let fixture: ComponentFixture<InputCurrencyComponent>;
+describe('InputPercentageComponent', () => {
+  let component: InputPercentageComponent;
+  let fixture: ComponentFixture<InputPercentageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InputCurrencyComponent]
+      imports: [InputPercentageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(InputCurrencyComponent);
+    fixture = TestBed.createComponent(InputPercentageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

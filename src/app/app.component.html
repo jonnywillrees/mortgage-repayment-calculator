@@ -2,18 +2,18 @@
   <main class="card__content">
     <div class="calculator">
       <div class="calculator__header">
-        <h2>Mortgage Calculator</h2>
-        <button (click)="onClearCalculator($event)">Clear All</button>
+        <h2 class="text-preset-2 clr-slate-900">Mortgage Calculator</h2>
+        <button class="reset-button text-preset-4 clr-slate-700" (click)="onClearCalculator($event)">Clear All</button>
       </div>
       <form class="calculator__form" (submit)="onSubmit($event)">
         <label for="amount">Mortgage Amount</label>
-        <app-input-currency inputId="amount" [formControl]="amount" />
+        <app-input-currency prefix="&pound;" inputId="amount" [formControl]="amount" />
 
         <label for="term">Mortgage Term</label>
-        <input type="number" name="term" id="term">
-
+        <app-input-whole-numbers suffix="years" inputId="term" [formControl]="term" />
+        
         <label for="interestRate">Interest Rate</label>
-        <input type="number" name="interestRate" id="interestRate">
+        <app-input-percentage suffix="%" inputId="interestRate" [formControl]="interestRate" />
 
         <span>Mortgage Type</span>
         <input type="radio" name="type" id="repayment" value="repayment">
@@ -26,20 +26,20 @@
     </div>
     <div class="results">
       @if (isResultCalculated) {
-        Your results
-  
-        Your results are shown below based on the information you provided. 
-        To adjust the results, edit the form and click “calculate repayments” again.
-      
-        Your monthly repayments
-      
-        Total you'll repay over the term
+        <div>
+          Your results
+          Your results are shown below based on the information you provided.
+          To adjust the results, edit the form and click “calculate repayments” again.
+          Your monthly repayments
+          Total you'll repay over the term
+        </div>
       }
       @else {
-        Results shown here
-  
-        Complete the form and click “calculate repayments” to see what 
-        your monthly repayments would be.
+        <div>
+          Results shown here
+          Complete the form and click “calculate repayments” to see what
+          your monthly repayments would be.
+        </div>
       }
     </div>
 
