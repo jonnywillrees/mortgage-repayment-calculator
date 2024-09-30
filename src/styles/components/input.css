@@ -7,8 +7,12 @@
     overflow: hidden;
 }
 
-.input-wrapper:has(input:focus) {
+.input-wrapper:hover {
     border-color: var(--clr-slate-900);
+}
+
+.input-wrapper:has(input:focus) {
+    border-color: var(--clr-primary);
 }
 
 .input-group-addon {
@@ -21,6 +25,13 @@
     vertical-align: middle;
     display: table-cell;
 }
+
+.input-group-addon:has(+ input:focus),
+input:focus + .input-group-addon {
+    background-color: var(--clr-primary);
+}
+
+
 
 input[type="text"],
 input[type="number"] {
