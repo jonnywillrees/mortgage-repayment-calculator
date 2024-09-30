@@ -15,13 +15,12 @@
         <label for="interestRate">Interest Rate</label>
         <app-input-percentage suffix="%" inputId="interestRate" [formControl]="interestRate" />
 
-        <span>Mortgage Type</span>
-        <input type="radio" name="type" id="repayment" value="repayment">
-        <label for="repayment">Repayment</label>
-        <input type="radio" name="type" id="interestOnly" value="interestOnly">
-        <label for="interestOnly">Interest Only</label>
+        <app-radio-buttons />
 
-        <button type="submit">Calculate Repayments</button>
+        <button class="button" type="submit">
+          <img src="images/icon-calculator.svg" alt="">
+          Calculate Repayments
+        </button>
       </form>
     </div>
     <div class="results">

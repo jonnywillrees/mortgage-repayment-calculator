@@ -21,6 +21,7 @@ body {
 }
 
 .reset-button {
+    outline-offset: 2px;        
     border: none;
     background-color: transparent;
     text-decoration: underline;
@@ -28,3 +29,24 @@ body {
     cursor: pointer;
 }
 
+.reset-button:hover,
+.reset-button:focus-visible
+{
+    color: var(--clr-slate-900);        
+}
+
+.button {
+    background-color: var(--clr-primary);
+    outline: none;
+    border: none;
+    border-radius: 999px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    display: flex;
+    gap: .8rem;
+}
+
+.button:hover,
+.button:focus-visible {
+    background-color: var(--clr-primary-light-200);
+}

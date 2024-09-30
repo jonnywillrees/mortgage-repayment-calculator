@@ -4,11 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { InputCurrencyComponent } from './components/input/input-currency/input-currency.component';
 import { InputWholeNumbersComponent } from "./components/input/input-whole-numbers/input-whole-numbers.component";
 import { InputPercentageComponent } from './components/input/input-percentage/input-percentage.component';
+import { RadioButtonsComponent } from './components/radio-buttons/radio-buttons.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule, InputCurrencyComponent, InputWholeNumbersComponent, InputPercentageComponent],
+  imports: [RouterOutlet, ReactiveFormsModule, InputCurrencyComponent, InputWholeNumbersComponent, InputPercentageComponent, RadioButtonsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
