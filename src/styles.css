@@ -15,9 +15,12 @@ body {
 .card {
     max-width: 1008px;
     background-color: var(--clr-white);
-    padding: 2rem;
     border-radius: 10px;
     min-height: 606px;
+}
+
+.calculator {
+    padding: 1.6rem;
 }
 
 .reset-button {
@@ -49,4 +52,30 @@ body {
 .button:hover,
 .button:focus-visible {
     background-color: var(--clr-primary-light-200);
+}
+
+.results {
+    background-color: var(--clr-slate-900);
+    color: var(--clr-white);
+    padding: 1.6rem;
+}
+
+.results__output {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+}
+
+/* .results__output p {
+    margin: 0;
+} */
+
+.results__output hr {
+    margin-block: 1rem;
+    border-bottom: none;
+
+    border-color: rgb(154, 190, 213, 0.25);
+}
+
+.results__img {
+    margin-inline: auto;
 }

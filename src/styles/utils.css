@@ -19,3 +19,7 @@
 .clr-slate-900 {
     color: var(--clr-slate-900);
 }
+
+.text-align-center {
+    text-align: center;
+}

@@ -6,17 +6,20 @@ import { InputWholeNumbersComponent } from "./components/input/input-whole-numbe
 import { InputPercentageComponent } from './components/input/input-percentage/input-percentage.component';
 import { RadioButtonsComponent } from './components/radio-buttons/radio-buttons.component';
 import { MortgageType } from './enums/mortgageType';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule, InputCurrencyComponent, InputWholeNumbersComponent, InputPercentageComponent, RadioButtonsComponent],
+  imports: [RouterOutlet, ReactiveFormsModule, InputCurrencyComponent, InputWholeNumbersComponent, InputPercentageComponent, RadioButtonsComponent, CurrencyPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   // Properties
   isResultCalculated = false;
+  monthlyRepayment: number | undefined = 58;
+  totalRepayment: number | undefined = 55 * 12;
 
   calculatorForm = new FormGroup({
     amount: new FormControl<number | null>(null, Validators.required),

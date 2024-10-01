@@ -1,5 +1,13 @@
 .text-preset-1,
 .text-preset-2,
+.text-preset-3,
+.text-preset-4,
+.text-preset-6 {
+    margin-bottom: 0.8em;
+}
+
+.text-preset-1,
+.text-preset-2,
 .text-preset-3 {
     line-height: 1.25;
     letter-spacing: -1px;
@@ -8,6 +16,12 @@
 
 .text-preset-1 {
     font-size: 3.5rem;
+}
+
+@media screen and (max-width: 30em) {
+    .text-preset-1 {
+        font-size: 2.5rem;
+    }
 }
 
 .text-preset-2 {
