@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BaseControlValueAccessor } from '../../config/base-control-value-accessor';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { MortgageTypeRadioButtonOption } from '../../models/component.model';
 
 @Component({
   selector: 'app-radio-buttons',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './radio-buttons.component.html',
   styleUrl: './radio-buttons.component.css',
   providers: [
@@ -16,6 +17,6 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
     }
   ]
 })
-export class RadioButtonsComponent extends BaseControlValueAccessor<any> {
-
+export class RadioButtonsComponent extends BaseControlValueAccessor<string | null> {
+  @Input({required: true}) options!: MortgageTypeRadioButtonOption[];
 }

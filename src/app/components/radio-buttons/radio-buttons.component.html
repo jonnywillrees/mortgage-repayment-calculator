@@ -1,11 +1,14 @@
 <span>Mortgage Type</span>
 
-<label class="radio-wrapper">
-    <input type="radio" name="mortgageType" value="repayment">
-    Repayment
-</label>
+@for (option of options; track $index;) {
+    <label class="radio-wrapper">
+        <input
+            type="radio" name="mortgageType"
+            [value]="option.value" [ngModel]="inputValue"
+            (ngModelChange)="notifyValueChanged($event)"
+        >
+        {{option.label }}
+    </label>
+}
 
-<label class="radio-wrapper">
-    <input type="radio" name="mortgageType" value="interestOnly">
-    Interest Only
-</label>
+<small class="error-message text-preset-5">This field is required</small>

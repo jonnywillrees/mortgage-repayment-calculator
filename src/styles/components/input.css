@@ -46,3 +46,21 @@ input[type="number"] {
     outline: none;
     border: none;
 }
+
+.ng-invalid.ng-touched > .input-wrapper {
+    border-color: var(--clr-accent);
+}
+
+.ng-invalid.ng-touched > .input-wrapper .input-group-addon {
+    background-color: var(--clr-accent);
+    color: var(--clr-white);
+}
+
+.error-message {
+    color: var(--clr-accent);
+    display: none;
+}
+
+.ng-invalid.ng-touched > .error-message {
+    display: block;
+}
